@@ -38,11 +38,20 @@
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This MATLAB project explores the following system:</p>
+<p><strong>Model Description:</strong> For N groups in a 2D space, let <span class="math notranslate nohighlight">\(\rho_i(\mathbf{x}, t)\)</span> denotes the mass density distribution of group <em>i</em>
+at time <em>t</em>, <span class="math notranslate nohighlight">\(i=1,2,...,N\)</span>. The problem we are interested in:</p>
 <div class="math notranslate nohighlight">
-\[\partial_t\rho_i = \nabla\cdot[\rho_i\nabla(H'(\rho_i)+V(x)+W\ast\rho_i)]\]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho_i\)</span> describes a probability measure of one species in the system</p>
-<p>implements the finite volume scheme described in <a class="reference external" href="http://de.arxiv.org/abs/1402.4252v2">this paper</a>, and extending the scheme to include more than one species.</p>
+\[\partial_t\rho_i = \nabla\cdot\Big[\rho_i\nabla\Big(H'(\rho)+V(\mathbf{x})+W_{ii}\ast\rho_i+\sum\limits_{j\neq{i}}{W_{ij}\ast\rho_j}+\epsilon\rho\Big)\Big], \mathbf{x}\in\mathbb{R}^2, t\gt{0}\]</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{\rho_i}\)</span> : mass density of group <em>i</em></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{\rho}\)</span>: <span class="math notranslate nohighlight">\(\sum{\rho_i}\)</span> , sum of densities of all N groups</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{H(\rho)}\)</span>: density of internal energy</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{V(\mathbf{x})}\)</span>: environmental confinement potential</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{W_{ii}}\)</span>: self-interaction potential (intraspecific interaction potential)</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{W_{ij}}(j\neq{i})\)</span>: cross-interaction potential (interspecific interaction potential)</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{\epsilon}\)</span>: diffusion coefficient</p>
+<p>with initial condition <span class="math notranslate nohighlight">\(\rho_i(\mathbf{x},0)=\rho_{i0}(\mathbf{x})\)</span>.</p>
+<p><strong>Numeric Analysis:</strong> This numeric scheme is developed based on the finite volume method described in <a class="reference internal" href="#links">Links</a> [2]. The paper proposes a finite method scheme for nonlinear nonlocal system for a single group in one and two spacial dimensions. We extend the scheme to include more than one group,
+with cross-interaction mechanism mentioned in <a class="reference internal" href="#links">Links</a> [3].</p>
 <div class="topic">
 <p class="topic-title first">System Requirements</p>
 <table border="1" class="docutils">
@@ -65,10 +74,11 @@
 </div>
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
+<ol class="arabic simple">
 <li>Source Code: <a class="reference external" href="github.com/uidmice/finiteVolumeMethod">Github</a></li>
 <li>A Finite-Volume Method for Nonlinear Nonlocal Equations with a Gradient Flow Structure: <a class="reference external" href="http://de.arxiv.org/abs/1402.4252v2">arXiv:1402.4252v2</a></li>
-</ul>
+<li>Zoology of a Nonlocal Cross-Diffusion Model for Two Species: <a class="reference external" href="https://doi.org/10.1137/17M1128782">Permalink:</a></li>
+</ol>
 </div>
 <div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
