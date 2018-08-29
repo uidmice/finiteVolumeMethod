@@ -21,11 +21,12 @@ File Structure
     * /diffusion2d/single/Euler.m
         Euler method
 
-**Example**
+**Examples**
 
     * /diffusion2d/single/Example1.m
-        Example 1
-
+        :ref:`example1`
+    * /diffusion2d/single/Example2.m
+        :ref:`example2`
 
 Functions
 ------------

@@ -26,7 +26,7 @@ function [rhoR] = single2d (varargin)
 %   
 %   r = single2d(.. ,'solver') where 'solver' sets the numeric method used
 %   for ODE. Possible options: 'Euler', 'SSPRK3'. Default 'SSPRK3'.
-
+%   
 
 narginchk(5,10);
 
