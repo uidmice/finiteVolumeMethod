@@ -2,9 +2,14 @@
 Finite Volume Method for Nonlinear Nonlocal Equations
 =======================================================
 
+Documentations
+---------------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+
+   single
+
 
 Overview
 ---------
@@ -34,7 +39,8 @@ at time *t*, :math:`i=1,2,...,N`. The problem we are interested in:
 with initial condition :math:`\rho_i(\mathbf{x},0)=\rho_{i0}(\mathbf{x})`.
 
 
-**Numeric Analysis:** This numeric scheme is developed based on the finite volume method described in `Links`_ [2]. The paper proposes a finite method scheme for nonlinear nonlocal system for a single group in one and two spacial dimensions. We extend the scheme to include more than one group,
+**Numeric Analysis:** This numeric scheme is developed based on the finite volume method described in `Links`_ [2]. The paper proposes a
+finite method scheme for nonlinear nonlocal system for a single group in one and two spacial dimensions. We extend the scheme to include more than one group,
 with cross-interaction mechanism mentioned in `Links`_ [3].
 
 
@@ -53,7 +59,7 @@ Links
 
 #. Source Code: `Github <github.com/uidmice/finiteVolumeMethod>`_
 #. A Finite-Volume Method for Nonlinear Nonlocal Equations with a Gradient Flow Structure: `arXiv:1402.4252v2 <http://de.arxiv.org/abs/1402.4252v2>`_
-#. Zoology of a Nonlocal Cross-Diffusion Model for Two Species: `Permalink: <https://doi.org/10.1137/17M1128782>`_
+#. Zoology of a Nonlocal Cross-Diffusion Model for Two Species: `Permalink <https://doi.org/10.1137/17M1128782>`_
 
 Support
 -------

@@ -30,12 +30,8 @@ drawnow;	% Refresh screen to get rid of dialog box remnants.
 close(hFigure);
 if strcmpi(button, 'Yes')
 	hFigure = figure;
-	% Enlarge figure to full screen.
-	% set(gcf, 'Units', 'Normalized', 'Outerposition', [0, 0, 1, 1]);
 	title('Playing the movie we created', 'FontSize', 15);
-	% Get rid of extra set of axes that it makes for some reason.
 	axis off;
-	% Play the movie.
 	movie(myMovie);
 	close(hFigure);
 end

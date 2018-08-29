@@ -25,8 +25,36 @@ function [rhoR] = single2d (varargin)
 %   during the simulation. Default disabled.
 %   
 %   r = single2d(.. ,'solver') where 'solver' sets the numeric method used
-%   for ODE. Possible options: 'Euler', 'SSPRK3'. Default 'SSPRK3'.
+%   for ODE. Possible cho
+%   solver:     numeric method for ODE 'SSPRK3' or 'Euler'
 
+
+%   PP = SPLINEFIT(X,Y,P) where P is a positive integer interpolates the
+%   breaks linearly from the sorted locations of X. P is the number of
+%   spline pieces and P+1 is the number of breaks.
+%
+%   OPTIONAL INPUT
+%   Argument places 4 to 8 are reserved for optional input.
+%   These optional arguments can be given in any order:
+%
+%   PP = SPLINEFIT(...,'p') applies periodic boundary conditions to
+%   the spline. The period length is MAX(BREAKS)-MIN(BREAKS).
+%
+%   PP = SPLINEFIT(...,'r') uses robust fitting to reduce the influence
+%   from outlying data points. Three iterations of weighted least squares
+%   are performed. Weights are computed from previous residuals.
+%
+%   PP = SPLINEFIT(...,BETA), where 0 < BETA < 1, sets the robust fitting
+%   parameter BETA and activates robust fitting ('r' can be omitted).
+%   Default is BETA = 1/2. BETA close to 0 gives all data equal weighting.
+%   Increase BETA to reduce the influence from outlying data. BETA close
+%   to 1 may cause instability or rank deficiency.
+%
+%   PP = SPLINEFIT(...,N) sets the spline order to N. Default is a cubic
+%   spline with order N = 4. A spline with P pieces has P+N-1 degrees of
+%   freedom. With periodic boundary conditions the degrees of freedom are
+%   reduced to P.
+%
 
 narginchk(5,10);
 

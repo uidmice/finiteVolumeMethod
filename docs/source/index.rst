@@ -2,9 +2,14 @@
 Finite Volume Method for Nonlinear Nonlocal Equations
 =======================================================
 
+Documentations
+---------------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+
+   single
+
 
 Overview
 ---------
