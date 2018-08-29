@@ -1,3 +1,4 @@
 /diffusion1d/*
 /ref/*
-/diffusion2d/single/*.mat
+*.mat
+*.m~
